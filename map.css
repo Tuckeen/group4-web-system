@@ -1,0 +1,299 @@
+/* General Styles */
+body, html {
+    height: 100%; /* Set the height to 100% for both body and html elements to ensure full height coverage */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    font-family: Arial, sans-serif; /* Set the default font for the document */
+}
+
+/* Container Styles */
+.container {
+    padding: 20px; /* Add padding inside the container */
+    background-color: #8F117C; /* Set a background color for the container */
+    z-index: 1000; /* Set the stacking order to be above other elements */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center align items vertically */
+}
+
+/* Overlay Background for Notifications */
+#overlay {
+    position: fixed; /* Fix the overlay to the viewport */
+    top: 0; /* Position it at the top */
+    left: 0; /* Position it to the left */
+    width: 100%; /* Cover the full width */
+    height: 100%; /* Cover the full height */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    z-index: 999; /* Layer the overlay below the notification container */
+}
+
+/* Notification Container */
+#notificationContainer {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    position: fixed; /* Fix the container to the viewport */
+    top: 50%; /* Center it vertically */
+    left: 50%; /* Center it horizontally */
+    transform: translate(-50%, -50%); /* Translate to truly center the container */
+    background: #755B69; /* Set a background color for the notification */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 10px; /* Round the corners */
+    padding: 0; /* Remove padding */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+    width: 80%; /* Set the width to 80% of the viewport */
+    max-height: 80%; /* Limit the height to 80% of the viewport */
+    z-index: 1000; /* Layer it above the overlay */
+    visibility: visible; /* Make it visible */
+    opacity: 1; /* Fully opaque */
+}
+
+/* Notification Header */
+.notification-header {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out items */
+    align-items: center; /* Center align items vertically */
+    padding: 10px; /* Add padding */
+    background-color: #553555; /* Set a background color for the header */
+    color: white; /* Set the text color to white */
+    border-radius: 5px 5px 0 0; /* Round the top corners */
+    height: 40px; /* Set a fixed height */
+}
+
+/* Content Area within Notification Container */
+#notificationContent {
+    min-height: 150px; /* Minimum height for the content area */
+    max-height: 200px; /* Maximum height for the content area */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
+    padding: 10px; /* Add padding */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+}
+
+/* Individual Notification Item with custom border color */
+.notification-item {
+    border-left: 10px solid #1E90FF; /* Custom left border color */
+    padding: 10px; /* Add padding */
+    margin-bottom: 10px; /* Add space below each item */
+    background-color: #96C5B0; /* Set a background color for individual notifications */
+    border-radius: 5px; /* Round the corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* New Notification Style */
+.notification-new {
+    border-left: 4px solid #32CD32; /* Change left border color for new notifications */
+    background-color: rgba(50, 205, 50, 0.1); /* Set a light green background for new notifications */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Empty Notification Message */
+.notification-empty {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center align items vertically */
+    justify-content: center; /* Center align items horizontally */
+    color: #888; /* Set the text color to a gray shade */
+    font-size: 16px; /* Set the font size */
+    height: 100px; /* Set a fixed height */
+    text-align: center; /* Center the text */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Round the corners */
+    background-color: #f9f9f9; /* Set a light background color */
+}
+
+/* Remove Bottom Margin for Last Notification Item */
+.notification-item:last-child {
+    margin-bottom: 0; /* Remove margin for the last notification item */
+}
+
+/* Close Button Styles */
+#closeNotification {
+    background-color: transparent; /* Transparent background */
+    border: ridge; /* Ridge border style */
+    border-radius: 4px; /* Round the corners */
+    margin-right: 3px; /* Space to the right */
+    padding: 15px; /* Add padding */
+    color: #FFF; /* Set the text color to white */
+    cursor: pointer; /* Change cursor on hover */
+    font-size: 25px; /* Set the font size */
+    font-weight: 350px; /* Set font weight */
+    padding: 0; /* Reset padding */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and color */
+}
+
+#closeNotification:hover {
+    background-color: red; /* Change background to red on hover */
+    color: white; /* Change text color to white on hover */
+}
+
+/* Header Styles */
+h1 {
+    margin: 0; /* Remove default margin */
+    margin-right: 20px; /* Add right margin */
+    color: white; /* Set text color to white */
+}
+
+/* Input and Button Styles */
+input {
+    padding: 10px; /* Add padding */
+    width: 300px; /* Set a fixed width */
+    margin-right: 10px; /* Add right margin */
+}
+
+button {
+    padding: 10px; /* Add padding */
+}
+
+/* Search Container Styles */
+.search-container {
+    position: relative; /* Allow absolutely positioned children */
+    display: inline-block; /* Inline-block for layout */
+}
+
+/* Search Input Styles */
+input#search {
+    padding: 10px; /* Add padding */
+    width: 300px; /* Set a fixed width */
+    margin-right: 10px; /* Add right margin */
+}
+
+/* Clear Button Styles */
+#clearSearch {
+    position: absolute; /* Position it absolutely within the search container */
+    right: 15px; /* Position it to the right */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust position to center */
+    cursor: pointer; /* Change cursor on hover */
+    color: #000; /* Set text color to black */
+    font-size: 30px; /* Set font size */
+    display: none; /* Hidden initially */
+}
+
+/* Show Clear Button on Search Input Focus */
+input#search:focus + #clearSearch {
+    display: inline; /* Show only when input is focused */
+}
+
+/* Notification Badge Styles */
+#notificationBadge {
+    display: inline-block; /* Inline-block for layout */
+    background-color: red; /* Set background color to red */
+    color: white; /* Set text color to white */
+    border-radius: 50%; /* Make it circular */
+    width: 20px; /* Set width */
+    height: 20px; /* Set height */
+    text-align: center; /* Center align text */
+    line-height: 20px; /* Center align text vertically */
+    font-size: 14px; /* Set font size */
+    margin-left: 5px; /* Add left margin */
+}
+
+
+
+/* Map Container Styles */
+#map {
+    height: 500px; /* Set a height for the map */
+    width: 100%;   /* Make it take up the full width */
+}
+/* Logout Button Styles */
+#logoutBtn {
+    margin-left: 10px; /* Add left margin */
+    padding: 12px; /* Add padding */
+    margin-top: 5px; /* Add top margin */
+    background-color: #000; /* Set background color to black */
+    color: white; /* Set text color to white */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Round the corners */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+/* Logout Button Hover Effect */
+#logoutBtn:hover {
+    background-color: #1E90FF; /* Change background color on hover */
+}
+
+/* Search Button Styles */
+#searchBtn {
+    margin-left: 5px; /* Add left margin */
+    padding: 12px; /* Add padding */
+    margin-top: 4px; /* Add top margin */
+    color: white; /* Set text color to white */
+    border: none; /* Remove border */
+    background-color: #000; /* Set background color to black */
+    border-radius: 5px; /* Round the corners */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+/* Search Button Hover Effect */
+#searchBtn:hover {
+    background-color: #1E90FF; /* Change background color on hover */
+}
+
+/* Notification Button Styles */
+#notificationBtn {
+    margin-left: auto; /* Push to the right */
+    margin-top: 5px; /* Add top margin */
+    padding: 10px; /* Add padding */
+    background-color: #000; /* Set background color to black */
+    color: white; /* Set text color to white */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Round the corners */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+/* Notification Button Hover Effect */
+#notificationBtn:hover {
+    background-color: #1E90FF; /* Change background color on hover */
+}
+
+/* Solid Border for Notification Items */
+.solid {
+    border-style: solid; /* Set border style to solid */
+    border-width: 1px; /* Set border width */
+    border-color: #ccc; /* Set border color */
+    border-radius: 5px; /* Round the corners */
+    padding: 10px; /* Add padding */
+    margin-bottom: 10px; /* Add space below each item */
+}
+
+/* Hide the empty notification message initially */
+.notification-empty {
+    display: none; /* Initially hide the empty notification message */
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Black with transparency */
+    padding-top: 60px;
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

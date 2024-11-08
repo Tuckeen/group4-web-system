@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <title>Location Search with OpenStreetMap</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Map</h1>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Enter location...">
+            <span id="clearSearch">&times;</span>
+        </div>
+        <button id="searchBtn">Search</button>
+        <button id="notificationBtn">
+            🔔 
+            <span id="notificationBadge" style="display: none;">!</span>
+        </button>
+        <button id="logoutBtn">Logout</button>
+    </div>
+
+    <div id="overlay" style="display: none;"></div>
+
+    <div id="notificationContainer" style="display: none;">
+        <div class="notification-header">
+            <h2>Notifications</h2>
+            <button id="closeNotificationBtn">&times;</button>
+        </div>
+        <div id="notificationContent">
+            <div class="notification-empty">No notifications available</div>
+        </div>
+    </div>
+
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modalMessage"></p>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="Map.js"></script>
+
+</body>
+</html>

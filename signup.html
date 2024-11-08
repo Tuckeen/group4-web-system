@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Set the character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design settings for mobile devices -->
+    <link rel="stylesheet" href="style.css"> <!-- Link to the custom CSS file for styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Include Font Awesome for icons -->
+    <script type="module" src="register.js" defer></script> <!-- Link to the JavaScript file for registration logic, deferred to load after HTML -->
+    <title>Sign up and Log in</title> <!-- Title of the webpage -->
+</head>
+<body>
+    <div class="wrapper"> <!-- Main container for the signup form -->
+        <h1>Sign Up</h1> <!-- Main heading for the signup section -->
+        <form id="signupForm"> <!-- Form for user signup -->
+            <div class="input-container"> <!-- Container for the username input -->
+                <i class="fas fa-user"></i> <!-- Font Awesome icon for user -->
+                <input type="text" id="username" placeholder="Username" required> <!-- Input field for username -->
+            </div>
+            <div class="input-container"> <!-- Container for the email input -->
+                <i class="fas fa-envelope"></i> <!-- Font Awesome icon for email -->
+                <input type="email" id="email" placeholder="Email Address" required> <!-- Input field for email address -->
+            </div>
+            <div class="input-container"> <!-- Container for the password input -->
+                <i class="fas fa-lock"></i> <!-- Font Awesome icon for password -->
+                <input type="password" id="password" placeholder="Password" required> <!-- Input field for password -->
+            </div>
+            <div class="input-container"> <!-- Container for the confirm password input -->
+                <i class="fas fa-lock"></i> <!-- Font Awesome icon for confirm password -->
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required> <!-- Input field for confirming password -->
+            </div>
+            <div class="terms"> <!-- Container for terms and conditions checkbox -->
+                <input type="checkbox" id="checkbox" required> <!-- Checkbox for terms agreement -->
+                <label for="checkbox">I agree to these <a href="#">Terms & Conditions</a></label> <!-- Label for checkbox with link to terms -->
+            </div>
+            <button id="signup" type="button">Sign Up</button> <!-- Button to submit the signup form, set as type="button" to prevent default form submission -->
+        </form>
+        <div class="member"> <!-- Message for existing members -->
+            already a member? <a href="./index.html">Login here</a> <!-- Link to login page -->
+        </div>
+        <!-- Message Container for displaying notifications or error messages -->
+        <div id="messageContainer" style="display:none;"> <!-- Hidden by default, displayed when needed -->
+            <div id="messageText"></div> <!-- Text area for the message -->
+            <button id="okButton">OK</button> <!-- Button to dismiss the message -->
+        </div>
+    </div>
+</body>
+</html>
+
+
